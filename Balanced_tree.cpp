@@ -1,7 +1,7 @@
 // There is a Node class, having int data, Node* left, Node* right
 // Code for determining whether the Binary Tree is balanced or not
 
-int height(Node* root)
+int height(Node* root) // The time complexity of this code is O(n^2)
 {
   if(root == NULL)
     return 0;
@@ -25,3 +25,41 @@ bool isBalanced(Node* root)
   bool diff = abs(height(root->left) - height(root->right)) <= 1;
   return diff;
 }
+
+// Another approach of solving this question is by using pair
+
+pair<bool, int> isCheckBalance(Node* root)
+{
+ if(root == NULL)
+ {
+   pair<bool, int> p = make_pair(true, 0);
+   return p;
+ }
+  
+  pair<bool, int> left = isCheckBalance(root->left);
+  pair<bool, int> right = isCheckBalance(root->right);
+  
+  bool leftAns = left.first;
+  bool rightAns = right.first;
+  
+  bool diff = abs(left.second - right.second) <= 1;
+  pair<bool, int> ans;
+  ans.second = max(left.second, right.second) + 1;
+  
+  if(left && right && diff)
+  {
+    ans.first = true;
+  }
+  else{
+    ans.first = false;
+  }
+  return ans;
+}
+  
+  
+  
+  
+  
+  
+  
+  
