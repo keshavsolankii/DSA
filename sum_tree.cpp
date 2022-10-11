@@ -32,3 +32,5 @@ pair<bool, int> isSumTree(Node* root)
   }
   return ans;
 }
+
+// Time and space complexity is O(n)
