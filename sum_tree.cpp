@@ -15,7 +15,7 @@ pair<bool, int> isSumTree(Node* root)
   pair<bool, int> right = isSumTree(root->right);
   
   bool leftAns = left.first;
-  bool.rightAns = right.first;
+  bool rightAns = right.first;
   
   bool val = (root->data == left.second + right.second);
   
