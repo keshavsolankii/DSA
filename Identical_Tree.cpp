@@ -1,4 +1,4 @@
-// Let root of tree 1 = r1 and root of tree 2 = r2
+// Let root of tree 1 = r1 and root of tree 2 = r2.
 
 bool identicalTrees(Node* r1, Node* r2)
 {
